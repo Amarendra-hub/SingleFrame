@@ -1,27 +1,44 @@
 @import "tailwindcss";
 
+/* Article styles (stable, explicit, mobile-safe) */
+.article {
+  max-width: 42rem;
+    margin: 0 auto;
+      padding: 4rem 1.25rem;
+        color: #e5e7eb; /* gray-200 */
+        }
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+        .article h1 {
+          font-size: 2rem;
+            font-weight: 700;
+              margin-bottom: 1.5rem;
+              }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+              .article h2 {
+                font-size: 1.25rem;
+                  font-weight: 600;
+                    margin-top: 2.5rem;
+                      margin-bottom: 1rem;
+                      }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+                      .article p {
+                        margin-bottom: 1rem;
+                          line-height: 1.75;
+                          }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
+                          .article ul {
+                            margin-left: 1.25rem;
+                              margin-bottom: 1rem;
+                              }
+
+                              .article li {
+                                list-style: disc;
+                                  margin-bottom: 0.5rem;
+                                  }
+
+                                  .article blockquote {
+                                    border-left: 3px solid #3b82f6;
+                                      padding-left: 1rem;
+                                        color: #d1d5db;
+                                          margin: 1.5rem 0;
+                                          }
