@@ -15,6 +15,17 @@ export const metadata = {
 
                                                     <div className="space-y-6">
                                                             <a
+                                                              href="/blog/the-attention-framework"
+                                                                className="block border border-gray-700 rounded-xl p-6 hover:border-blue-500 transition"
+                                                                >
+                                                                  <h2 className="text-xl font-semibold mb-2">
+                                                                      The Attention Framework
+                                                                        </h2>
+                                                                          <p className="text-gray-400">
+                                                                              A practical system for designing content that earns distribution.
+                                                                                </p>
+                                                                                </a>
+                                                            <a
                                                                       href="/blog/how-attention-is-distributed"
                                                                                 className="block border border-gray-800 rounded-xl p-6 hover:border-gray-600 transition"
                                                                                         >
