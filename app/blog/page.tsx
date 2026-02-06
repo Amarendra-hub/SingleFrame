@@ -26,6 +26,17 @@ export const metadata = {
                                                                                                                                                           visibility.
                                                                                                                                                                     </p>
                                                                                                                                                                             </a>
+                                                            <a
+                                                              href="/blog/why-most-content-fails"
+                                                                className="block border border-gray-800 rounded-xl p-6 hover:border-gray-600 transition"
+                                                                >
+                                                                  <h2 className="text-xl font-semibold mb-2">
+                                                                      Why Most Content Fails
+                                                                        </h2>
+                                                                          <p className="text-gray-400">
+                                                                              A systems explanation of why effort alone does not create visibility.
+                                                                                </p>
+                                                                                </a>
                                                                                                                                                                                   </div>
                                                                                                                                                                                       </main>
                                                                                                                                                                                         );
