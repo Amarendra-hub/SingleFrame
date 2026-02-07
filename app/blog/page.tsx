@@ -1,54 +1,40 @@
 export const metadata = {
-        title: "Frameworks",
-          description:
-              "Analytical frameworks explaining how attention and growth systems work across digital platforms.",
-              };
+    title: "Blog",
+      description: "Frameworks and essays on attention, systems, and distribution.",
+      };
 
-              export default function BlogPage() {
-                return (
-                    <main className="max-w-4xl mx-auto px-6 py-24">
-                          <h1 className="text-4xl font-bold mb-6">Frameworks</h1>
+      export default function BlogPage() {
+        return (
+            <main className="max-w-5xl mx-auto px-6 py-20">
+                  <h1 className="text-4xl font-bold mb-4">Writing</h1>
+                        <p className="text-gray-400 mb-12 max-w-2xl">
+                                Essays and frameworks on how attention is distributed in digital systems.
+                                      </p>
 
-                                <p className="text-gray-400 mb-12">
-                                        Analytical breakdowns of how digital platforms distribute attention.
-                                              </p>
-
-                                                    <div className="space-y-6">
+                                            <div className="space-y-10">
+                                                    {/* Featured */}
                                                             <a
-                                                              href="/blog/the-attention-framework"
-                                                                className="block border border-gray-700 rounded-xl p-6 hover:border-blue-500 transition"
-                                                                >
-                                                                  <h2 className="text-xl font-semibold mb-2">
-                                                                      The Attention Framework
-                                                                        </h2>
-                                                                          <p className="text-gray-400">
-                                                                              A practical system for designing content that earns distribution.
-                                                                                </p>
-                                                                                </a>
-                                                            <a
-                                                                      href="/blog/how-attention-is-distributed"
-                                                                                className="block border border-gray-800 rounded-xl p-6 hover:border-gray-600 transition"
+                                                                      href="/blog/the-attention-framework"
+                                                                                className="block border border-gray-700 rounded-xl p-6 hover:border-gray-500 transition"
                                                                                         >
-                                                                                                  <h2 className="text-xl font-semibold mb-2">
-                                                                                                              How Attention Is Actually Distributed
+                                                                                                  <h2 className="text-2xl font-semibold mb-2">
+                                                                                                              The Attention Framework
                                                                                                                         </h2>
                                                                                                                                   <p className="text-gray-400">
-                                                                                                                                              A systems-level explanation of how platforms decide what gets
-                                                                                                                                                          visibility.
-                                                                                                                                                                    </p>
-                                                                                                                                                                            </a>
-                                                            <a
-                                                              href="/blog/why-most-content-fails"
-                                                                className="block border border-gray-800 rounded-xl p-6 hover:border-gray-600 transition"
-                                                                >
-                                                                  <h2 className="text-xl font-semibold mb-2">
-                                                                      Why Most Content Fails
-                                                                        </h2>
-                                                                          <p className="text-gray-400">
-                                                                              A systems explanation of why effort alone does not create visibility.
-                                                                                </p>
-                                                                                </a>
-                                                                                                                                                                                  </div>
-                                                                                                                                                                                      </main>
-                                                                                                                                                                                        );
-                                                                                                                                                                                        }
+                                                                                                                                              A practical system for designing content that earns distribution.
+                                                                                                                                                        </p>
+                                                                                                                                                                </a>
+
+                                                                                                                                                                        {/* Others */}
+                                                                                                                                                                                <div className="grid gap-6">
+                                                                                                                                                                                          <a href="/blog/how-attention-is-distributed" className="hover:underline">
+                                                                                                                                                                                                      How Attention Is Actually Distributed
+                                                                                                                                                                                                                </a>
+                                                                                                                                                                                                                          <a href="/blog/why-most-content-fails" className="hover:underline">
+                                                                                                                                                                                                                                      Why Most Content Fails
+                                                                                                                                                                                                                                                </a>
+                                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                                              </div>
+                                                                                                                                                                                                                                                                  </main>
+                                                                                                                                                                                                                                                                    );
+                                                                                                                                                                                                                                                                    }
