@@ -1,44 +1,39 @@
-export default function Home() {
-          return (
-              <main className="max-w-5xl mx-auto px-6 py-24">
-                    {/* Hero */}
-                          <section className="mb-24">
-                                  <h1 className="text-5xl font-bold leading-tight mb-6">
-                                            Understand Growth Systems.
-                                                      <br />
-                                                                <span className="text-blue-500">Not Hype.</span>
-                                                                        </h1>
+export const metadata = {
+          title: "SingleFrame",
+            description:
+                "Independent research on how attention and distribution systems work.",
+                };
 
-                                                                                <p className="text-gray-400 max-w-xl mb-10">
-                                                                                          SignalFrame analyzes how digital platforms actually distribute attention —
-                                                                                                    algorithms, incentives, and leverage points.
-                                                                                                            </p>
+                export default function HomePage() {
+                  return (
+                      <main className="max-w-5xl mx-auto px-6 py-24">
+                            <h1 className="text-5xl font-bold mb-6">
+                                    Understanding Attention Systems
+                                          </h1>
 
-                                                                                                                    <a
-                                                                                                                              href="/blog"
-                                                                                                                                        className="inline-block bg-blue-500 hover:bg-blue-600 text-black font-medium px-6 py-3 rounded-lg transition"
-                                                                                                                                                >
-                                                                                                                                                          Explore Frameworks →
-                                                                                                                                                                  </a>
-                                                                                                                                                                        </section>
+                                                <p className="text-gray-400 text-lg max-w-2xl mb-12">
+                                                        SingleFrame publishes calm, analytical writing on how attention is
+                                                                distributed across digital platforms — and why most content fails
+                                                                        to earn reach.
+                                                                              </p>
 
-                                                                                                                                                                              {/* Principles */}
-                                                                                                                                                                                    <section className="grid md:grid-cols-3 gap-6">
-                                                                                                                                                                                            {[
-                                                                                                                                                                                                      "Algorithms over opinions",
-                                                                                                                                                                                                                "Systems over hacks",
-                                                                                                                                                                                                                          "Evidence over anecdotes",
-                                                                                                                                                                                                                                  ].map((text) => (
-                                                                                                                                                                                                                                            <div
-                                                                                                                                                                                                                                                        key={text}
-                                                                                                                                                                                                                                                                    className="border border-gray-800 rounded-xl p-6 bg-black/20"
-                                                                                                                                                                                                                                                                              >
-                                                                                                                                                                                                                                                                                          <p className="text-lg">{text}</p>
-                                                                                                                                                                                                                                                                                                    </div>
-                                                                                                                                                                                                                                                                                                            ))}
-                                                                                                                                                                                                                                                                                                                  </section>
-                                                                                                                                                                                                                                                                                                                      </main>
-                                                                                                                                                                                                                                                                                                                        );
-                                                                                                                                                                                                                                                                                                                        }
-                                                                                                                                                                                                                                                                                                                
+                                                                                    <div className="flex gap-6">
+                                                                                            <a
+                                                                                                      href="/blog"
+                                                                                                                className="border border-gray-700 px-6 py-3 rounded-lg hover:border-gray-500 transition"
+                                                                                                                        >
+                                                                                                                                  Read the blog
+                                                                                                                                          </a>
+
+                                                                                                                                                  <a
+                                                                                                                                                            href="/blog/the-attention-framework"
+                                                                                                                                                                      className="text-blue-400 underline underline-offset-4"
+                                                                                                                                                                              >
+                                                                                                                                                                                        Start with the framework
+                                                                                                                                                                                                </a>
+                                                                                                                                                                                                      </div>
+                                                                                                                                                                                                          </main>
+                                                                                                                                                                                                            );
+                                                                                                                                                                                                            }
+
 
