@@ -1,40 +1,34 @@
-export const metadata = {
-          title: "SingleFrame",
-            description:
-                "Independent research on how attention and distribution systems work.",
-                };
+export default function HomePage() {
+          return (
+              <section className="max-w-3xl mx-auto px-6 py-24">
+                    <h1 className="text-5xl font-semibold leading-tight">
+                            Understand how attention actually moves.
+                                  </h1>
 
-                export default function HomePage() {
-                  return (
-                      <main className="max-w-5xl mx-auto px-6 py-24">
-                            <h1 className="text-5xl font-bold mb-6">
-                                    Understanding Attention Systems
-                                          </h1>
+                                        <p className="mt-6 text-lg text-gray-400">
+                                                SingleFrame publishes research-driven essays on attention,
+                                                        incentives, and why most content never breaks out.
+                                                              </p>
 
-                                                <p className="text-gray-400 text-lg max-w-2xl mb-12">
-                                                        SingleFrame publishes calm, analytical writing on how attention is
-                                                                distributed across digital platforms — and why most content fails
-                                                                        to earn reach.
-                                                                              </p>
+                                                                    <div className="mt-10 flex gap-4">
+                                                                            <a
+                                                                                      href="/blog"
+                                                                                                className="rounded-xl bg-white text-black px-6 py-3 font-medium"
+                                                                                                        >
+                                                                                                                  Read essays
+                                                                                                                          </a>
 
-                                                                                    <div className="flex gap-6">
-                                                                                            <a
-                                                                                                      href="/blog"
-                                                                                                                className="border border-gray-700 px-6 py-3 rounded-lg hover:border-gray-500 transition"
-                                                                                                                        >
-                                                                                                                                  Read the blog
-                                                                                                                                          </a>
+                                                                                                                                  <a
+                                                                                                                                            href="/about"
+                                                                                                                                                      className="rounded-xl border border-white/20 px-6 py-3"
+                                                                                                                                                              >
+                                                                                                                                                                        About
+                                                                                                                                                                                </a>
+                                                                                                                                                                                      </div>
+                                                                                                                                                                                          </section>
+                                                                                                                                                                                            )
+                                                                                                                                                                                            }
 
-                                                                                                                                                  <a
-                                                                                                                                                            href="/blog/the-attention-framework"
-                                                                                                                                                                      className="text-blue-400 underline underline-offset-4"
-                                                                                                                                                                              >
-                                                                                                                                                                                        Start with the framework
-                                                                                                                                                                                                </a>
-                                                                                                                                                                                                      </div>
-                                                                                                                                                                                                          </main>
-                                                                                                                                                                                                            );
-                                                                                                                                                                                                            }
 
                           
 

@@ -42,3 +42,30 @@
                                         color: #d1d5db;
                                           margin: 1.5rem 0;
                                           }
+
+                                          .prose {
+                                              line-height: 1.75;
+                                              }
+
+                                              .prose p {
+                                                margin-top: 1.25em;
+                                                  margin-bottom: 1.25em;
+                                                    color: rgb(212 212 216); /* zinc-300 */
+                                                    }
+
+                                                    .prose strong {
+                                                      color: white;
+                                                        font-weight: 600;
+                                                        }
+
+                                                        .prose h2 {
+                                                          margin-top: 2.5em;
+                                                            margin-bottom: 0.75em;
+                                                            }
+
+                                                            .prose h3 {
+                                                              margin-top: 2em;
+                                                                margin-bottom: 0.5em;
+                                                                }
+                                          
+                                        
