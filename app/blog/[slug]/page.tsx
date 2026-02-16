@@ -1,7 +1,7 @@
 import fs from "fs"
 import path from "path"
 import matter from "gray-matter"
-import { MDXRemote } from "next-mdx-remote/rsc"
+
 import { calculateReadingTime } from "@/lib/utils"
 import AuthorBox from "@/components/AuthorBox"
 import BuyButton from "@/components/BuyButton"
@@ -53,7 +53,7 @@ export async function generateMetadata({ params }: any) {
                                                                                 {data.date} · {readingTime}
                                                                                       </div>
 
-                                                                                            <MDXRemote source={content} />
+                                                                                            
                                                                                             <div className="mt-16 border-t border-neutral-800 pt-10">
                                                                                                   <h3 className="text-xl font-semibold mb-4">
                                                                                                       Want deeper frameworks?
