@@ -9,17 +9,26 @@ export function getAllPosts() {
 
     return files.map((filename) => {
         const slug = filename.replace(".mdx", "")
-            return { slug }
-              })
-              }
+            const filePath = path.join(postsDirectory, filename)
+                const fileContent = fs.readFileSync(filePath, "utf8")
+                    const { data } = matter(fileContent)
 
-              export function getPostBySlug(slug: string) {
-                const filePath = path.join(postsDirectory, `${slug}.mdx`)
-                  const fileContent = fs.readFileSync(filePath, "utf8")
-                    const { data, content } = matter(fileContent)
+                        return {
+                              slug,
+                                    title: data.title,
+                                          excerpt: data.excerpt,
+                                                date: data.date,
+                                                    }
+                                                      })
+                                                      }
 
-                      return {
-                          frontmatter: data,
-                              content,
-                                }
-                                }
+                                                      export function getPostBySlug(slug: string) {
+                                                        const filePath = path.join(postsDirectory, `${slug}.mdx`)
+                                                          const fileContent = fs.readFileSync(filePath, "utf8")
+                                                            const { data, content } = matter(fileContent)
+
+                                                              return {
+                                                                  frontmatter: data,
+                                                                      content,
+                                                                        }
+                                                                        }
