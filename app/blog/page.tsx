@@ -1,8 +1,8 @@
 import ArticleCard from "@/components/ArticleCard"
-import { getPosts } from "@/lib/posts"
+import { getAllPosts } from "@/lib/posts"
 
 export default function BlogPage() {
-  const posts = getPosts()
+  const posts = getAllPosts()
 
     return (
         <section className="py-16">

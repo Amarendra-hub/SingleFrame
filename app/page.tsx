@@ -1,10 +1,10 @@
 import Hero from "@/components/Hero"
 import ArticleCard from "@/components/ArticleCard"
-import { getPosts } from "@/lib/posts"
+import { getAllPosts } from "@/lib/posts"
 import BuyButton from "@/components/BuyButton"
 
 export default function HomePage() {
-  const posts = getPosts()
+  const posts = getAllPosts()
   
     return (
         <>
