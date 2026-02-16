@@ -1,10 +1,12 @@
-import withMDX from '@next/mdx'
+import createMDX from '@next/mdx'
 
-const nextConfig = {
-  pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'mdx'],
-  }
+const withMDX = createMDX({
+  extension: /\.mdx?$/,
+  })
 
-  export default withMDX({
-    extension: /\.mdx?$/,
-    })(nextConfig)
+  const nextConfig = {
+    pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'mdx'],
+    }
+
+    export default withMDX(nextConfig)
 
