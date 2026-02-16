@@ -1,71 +1,13 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
-/* Article styles (stable, explicit, mobile-safe) */
-.article {
-  max-width: 42rem;
-    margin: 0 auto;
-      padding: 4rem 1.25rem;
-        color: #e5e7eb; /* gray-200 */
-        }
+html {
+  background: black;
+  }
 
-        .article h1 {
-          font-size: 2rem;
-            font-weight: 700;
-              margin-bottom: 1.5rem;
-              }
-
-              .article h2 {
-                font-size: 1.25rem;
-                  font-weight: 600;
-                    margin-top: 2.5rem;
-                      margin-bottom: 1rem;
-                      }
-
-                      .article p {
-                        margin-bottom: 1rem;
-                          line-height: 1.75;
-                          }
-
-                          .article ul {
-                            margin-left: 1.25rem;
-                              margin-bottom: 1rem;
-                              }
-
-                              .article li {
-                                list-style: disc;
-                                  margin-bottom: 0.5rem;
-                                  }
-
-                                  .article blockquote {
-                                    border-left: 3px solid #3b82f6;
-                                      padding-left: 1rem;
-                                        color: #d1d5db;
-                                          margin: 1.5rem 0;
-                                          }
-
-                                          .prose {
-                                              line-height: 1.75;
-                                              }
-
-                                              .prose p {
-                                                margin-top: 1.25em;
-                                                  margin-bottom: 1.25em;
-                                                    color: rgb(212 212 216); /* zinc-300 */
-                                                    }
-
-                                                    .prose strong {
-                                                      color: white;
-                                                        font-weight: 600;
-                                                        }
-
-                                                        .prose h2 {
-                                                          margin-top: 2.5em;
-                                                            margin-bottom: 0.75em;
-                                                            }
-
-                                                            .prose h3 {
-                                                              margin-top: 2em;
-                                                                margin-bottom: 0.5em;
-                                                                }
+  ::selection {
+    background: #3b82f6;
+      color: white;
+      }
                                           
                                         
