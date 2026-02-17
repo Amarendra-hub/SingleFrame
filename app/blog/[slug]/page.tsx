@@ -1,42 +1,33 @@
 import { notFound } from "next/navigation"
 import { getAllPosts, getPostBySlug } from "@/lib/posts"
-import AuthorBox from "@/components/AuthorBox"
+import matter from "gray-matter"
 
-export async function generateStaticParams() {
-  return getAllPosts().map((post) => ({
-      slug: post.slug
-        }))
-        }
+interface Props {
+  params: { slug: string }
+  }
 
-        export default function BlogPost({ params }: { params: { slug: string } }) {
-          const post = getPostBySlug(params.slug)
+  export async function generateStaticParams() {
+    const posts = getAllPosts()
 
-            if (!post) return notFound()
+      return posts.map((post) => ({
+          slug: post.slug,
+            }))
+            }
 
-              return (
-                  <main className="max-w-2xl mx-auto px-6 py-20">
-                        <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
-                              <p className="text-zinc-400 mb-10">{post.date}</p>
+            export default function BlogPostPage({ params }: Props) {
+              try {
+                  const post = getPostBySlug(params.slug)
 
-                                    <div className="prose prose-invert">
-                                            <p>{post.excerpt}</p>
-
-                                                    <p>
-                                                              Attention compounds. Platforms reward retention, not effort.
-                                                                      </p>
-
-                                                                              <h2>The Core Idea</h2>
-
-                                                                                      <ul>
-                                                                                                <li>Hook immediately</li>
-                                                                                                          <li>Reduce friction</li>
-                                                                                                                    <li>Encourage completion</li>
-                                                                                                                            </ul>
-
-                                                                                                                                    <p>Growth is a systems outcome.</p>
-                                                                                                                                          </div>
-
-                                                                                                                                                <AuthorBox />
-                                                                                                                                                    </main>
-                                                                                                                                                      )
-                                                                                                                                                      }
+                      return (
+                            <article className="max-w-3xl mx-auto px-6 py-16">
+                                    <p className="text-sm text-neutral-500 mb-4">{post.date}</p>
+                                            <h1 className="text-4xl font-bold mb-6">{post.title}</h1>
+                                                    <div className="prose prose-invert">
+                                                              {post.content}
+                                                                      </div>
+                                                                            </article>
+                                                                                )
+                                                                                  } catch {
+                                                                                      notFound()
+                                                                                        }
+                                                                                      }

@@ -1,31 +1,36 @@
-// /lib/posts.ts
+import fs from "fs"
+import path from "path"
+import matter from "gray-matter"
 
-export type Post = {
-  slug: string
-    title: string
-      excerpt: string
-        date: string
-        }
+const postsDirectory = path.join(process.cwd(), "content/blog")
 
-        export const posts: Post[] = [
-          {
-              slug: "grow-instagram",
-                  title: "Grow Instagram With Systems",
-                      excerpt: "Why growth comes from compounding behavior, not hacks.",
-                          date: "March 2026"
-                            },
-                              {
-                                  slug: "youtube-algorithm",
-                                      title: "YouTube Algorithm With Systems",
-                                          excerpt: "Design for retention, not vanity metrics.",
-                                              date: "March 2026"
-                                                }
-                                                ]
+export function getAllPosts() {
+  const filenames = fs.readdirSync(postsDirectory)
 
-                                                export function getAllPosts(): Post[] {
-                                                  return posts
-                                                  }
+    return filenames.map((filename) => {
+        const slug = filename.replace(".mdx", "")
+            const fullPath = path.join(postsDirectory, filename)
+                const fileContents = fs.readFileSync(fullPath, "utf8")
+                    const { data } = matter(fileContents)
 
-                                                  export function getPostBySlug(slug: string): Post | undefined {
-                                                    return posts.find((post) => post.slug === slug)
+                        return {
+                              slug,
+                                    title: data.title,
+                                          excerpt: data.excerpt,
+                                                date: data.date,
                                                     }
+                                                      })
+                                                      }
+
+                                                      export function getPostBySlug(slug: string) {
+                                                        const fullPath = path.join(postsDirectory, `${slug}.mdx`)
+                                                          const fileContents = fs.readFileSync(fullPath, "utf8")
+                                                            const { content, data } = matter(fileContents)
+
+                                                              return {
+                                                                  content,
+                                                                      title: data.title,
+                                                                          excerpt: data.excerpt,
+                                                                              date: data.date,
+                                                                                }
+                                                                                }
