@@ -5,11 +5,12 @@ import matter from "gray-matter"
 const postsDirectory = path.join(process.cwd(), "content/blog")
 
 export function getAllPosts() {
-  const filenames = fs.readdirSync(postsDirectory)
+  const fileNames = fs.readdirSync(postsDirectory)
 
-    return filenames.map((filename) => {
-        const slug = filename.replace(".mdx", "")
-            const fullPath = path.join(postsDirectory, filename)
+    return fileNames.map((fileName) => {
+        const slug = fileName.replace(/\.mdx?$/, "")
+
+            const fullPath = path.join(postsDirectory, fileName)
                 const fileContents = fs.readFileSync(fullPath, "utf8")
                     const { data } = matter(fileContents)
 
@@ -24,13 +25,17 @@ export function getAllPosts() {
 
                                                       export function getPostBySlug(slug: string) {
                                                         const fullPath = path.join(postsDirectory, `${slug}.mdx`)
-                                                          const fileContents = fs.readFileSync(fullPath, "utf8")
-                                                            const { content, data } = matter(fileContents)
 
-                                                              return {
-                                                                  content,
-                                                                      title: data.title,
-                                                                          excerpt: data.excerpt,
-                                                                              date: data.date,
-                                                                                }
-                                                                                }
+                                                          if (!fs.existsSync(fullPath)) return null
+
+                                                            const fileContents = fs.readFileSync(fullPath, "utf8")
+                                                              const { data, content } = matter(fileContents)
+
+                                                                return {
+                                                                    slug,
+                                                                        title: data.title,
+                                                                            excerpt: data.excerpt,
+                                                                                date: data.date,
+                                                                                    content,
+                                                                                      }
+                                                                                      }
