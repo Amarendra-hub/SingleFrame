@@ -1,27 +1,25 @@
-import fs from "fs"
-import path from "path"
+import { getAllPosts } from "@/lib/posts"
 
 export async function generateStaticParams() {
-  const postsDir = path.join(process.cwd(), "content/blog")
-    const files = fs.readdirSync(postsDir)
+  const posts = getAllPosts()
 
-      return files.map((file) => ({
-          slug: file.replace(".mdx", ""),
-            }))
-            }
+    return posts.map((post) => ({
+        slug: post.slug,
+          }))
+          }
 
-            export default async function BlogPost({
-              params,
-              }: {
-                params: { slug: string }
-                }) {
-                  const { slug } = params
+          export default async function BlogPost({
+            params,
+            }: {
+              params: Promise<{ slug: string }>
+              }) {
+                const { slug } = await params
 
-                    const Post = await import(`@/content/blog/${slug}.mdx`)
+                  const Post = await import(`@/content/blog/${slug}.mdx`)
 
-                      return (
-                          <article className="prose prose-invert max-w-3xl mx-auto py-16">
-                                <Post.default />
-                                    </article>
-                                      )
-                                      }
+                    return (
+                        <article className="prose prose-invert max-w-3xl mx-auto py-16">
+                              <Post.default />
+                                  </article>
+                                    )
+                                    }
