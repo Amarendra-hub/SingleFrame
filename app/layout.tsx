@@ -6,9 +6,10 @@ import Footer from "@/components/Footer"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
-  title: "SingleFrame",
-    description: "Systems for attention and distribution.",
-    }
+    title: "SingleFrame — Systems for Attention",
+      description:
+          "Research-backed frameworks for creators who want sustainable distribution."
+          }
 
     export default function RootLayout({
       children,

@@ -1,40 +1,39 @@
 "use client"
-
 import { useState } from "react"
 
 export default function InstagramBioTool() {
-  const [name, setName] = useState("")
+  const [niche, setNiche] = useState("")
     const [result, setResult] = useState("")
 
-      function generateBio() {
-          setResult(`${name} | Helping creators grow with systems.`)
-            }
+      function generate() {
+          setResult(
+                `${niche} | Systems Growth\nHelping creators design retention.\nDM "SYSTEM"`
+                    )
+                      }
 
-              return (
-                  <section className="py-20 max-w-xl mx-auto">
-                        <h1 className="text-3xl font-semibold mb-6">
-                                Instagram Bio Generator
-                                      </h1>
+                        return (
+                            <main className="max-w-xl mx-auto px-6 py-20 space-y-6">
+                                  <h1 className="text-3xl font-bold">Instagram Bio Generator</h1>
 
-                                            <input
-                                                    placeholder="Your niche"
-                                                            value={name}
-                                                                    onChange={(e) => setName(e.target.value)}
-                                                                            className="w-full bg-neutral-900 border border-neutral-700 px-4 py-3 rounded-lg mb-4"
-                                                                                  />
+                                        <input
+                                                className="w-full p-3 bg-zinc-900 border border-zinc-700 rounded"
+                                                        placeholder="Enter your niche"
+                                                                value={niche}
+                                                                        onChange={(e) => setNiche(e.target.value)}
+                                                                              />
 
-                                                                                        <button
-                                                                                                onClick={generateBio}
-                                                                                                        className="bg-white text-black px-6 py-3 rounded-lg"
-                                                                                                              >
-                                                                                                                      Generate
-                                                                                                                            </button>
+                                                                                    <button
+                                                                                            onClick={generate}
+                                                                                                    className="bg-blue-600 px-5 py-2 rounded"
+                                                                                                          >
+                                                                                                                  Generate
+                                                                                                                        </button>
 
-                                                                                                                                  {result && (
-                                                                                                                                          <div className="mt-6 p-4 border border-neutral-800 rounded-lg">
-                                                                                                                                                    {result}
-                                                                                                                                                            </div>
-                                                                                                                                                                  )}
-                                                                                                                                                                      </section>
-                                                                                                                                                                        )
-                                                                                                                                                                        }
+                                                                                                                              {result && (
+                                                                                                                                      <div className="p-4 bg-zinc-900 border border-zinc-700 rounded">
+                                                                                                                                                {result}
+                                                                                                                                                        </div>
+                                                                                                                                                              )}
+                                                                                                                                                                  </main>
+                                                                                                                                                                    )
+                                                                                                                                                                    }
