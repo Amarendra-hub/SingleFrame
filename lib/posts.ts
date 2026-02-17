@@ -4,38 +4,45 @@ import matter from "gray-matter"
 
 const postsDirectory = path.join(process.cwd(), "content/blog")
 
-export function getAllPosts() {
-  const fileNames = fs.readdirSync(postsDirectory)
+export interface PostMeta {
+  slug: string
+    title: string
+      excerpt: string
+        date: string
+        }
 
-    return fileNames.map((fileName) => {
-        const slug = fileName.replace(/\.mdx?$/, "")
+        export function getAllPosts(): PostMeta[] {
+          const files = fs.readdirSync(postsDirectory)
 
-            const fullPath = path.join(postsDirectory, fileName)
-                const fileContents = fs.readFileSync(fullPath, "utf8")
-                    const { data } = matter(fileContents)
+            return files.map((filename) => {
+                const slug = filename.replace(".mdx", "")
+                    const filePath = path.join(postsDirectory, filename)
+                        const fileContent = fs.readFileSync(filePath, "utf8")
 
-                        return {
-                              slug,
-                                    title: data.title,
-                                          excerpt: data.excerpt,
-                                                date: data.date,
-                                                    }
-                                                      })
-                                                      }
+                            const { data } = matter(fileContent)
 
-                                                      export function getPostBySlug(slug: string) {
-                                                        const fullPath = path.join(postsDirectory, `${slug}.mdx`)
+                                return {
+                                      slug,
+                                            title: data.title,
+                                                  excerpt: data.excerpt,
+                                                        date: data.date,
+                                                            }
+                                                              })
+                                                              }
 
-                                                          if (!fs.existsSync(fullPath)) return null
+                                                              export function getPostBySlug(slug: string) {
+                                                                const filePath = path.join(postsDirectory, `${slug}.mdx`)
 
-                                                            const fileContents = fs.readFileSync(fullPath, "utf8")
-                                                              const { data, content } = matter(fileContents)
+                                                                  if (!fs.existsSync(filePath)) return null
 
-                                                                return {
-                                                                    slug,
-                                                                        title: data.title,
-                                                                            excerpt: data.excerpt,
-                                                                                date: data.date,
-                                                                                    content,
-                                                                                      }
-                                                                                      }
+                                                                    const fileContent = fs.readFileSync(filePath, "utf8")
+                                                                      const { data, content } = matter(fileContent)
+
+                                                                        return {
+                                                                            slug,
+                                                                                title: data.title,
+                                                                                    excerpt: data.excerpt,
+                                                                                        date: data.date,
+                                                                                            content,
+                                                                                              }
+                                                                                              }

@@ -23,17 +23,13 @@ interface Props {
 
                       if (!post) {
                           notFound()
-                              return null
-                                }
+                            }
 
-                                  return (
-                                      <article className="max-w-3xl mx-auto px-6 py-20 prose prose-invert">
-                                            <h1>{post.title}</h1>
-                                                  <p className="text-gray-400 text-sm mb-8">{post.date}</p>
-
-                                                        <ReactMarkdown>
-                                                                {post.content}
-                                                                      </ReactMarkdown>
-                                                                          </article>
-                                                                            )
-                                                                            }
+                              return (
+                                  <article className="max-w-3xl mx-auto px-6 py-20 prose prose-invert">
+                                        <h1>{post.title}</h1>
+                                              <p className="text-gray-400 text-sm mb-8">{post.date}</p>
+                                                    <ReactMarkdown>{post.content}</ReactMarkdown>
+                                                        </article>
+                                                          )
+                                                          }
